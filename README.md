@@ -35,6 +35,29 @@ Before running either of the provided scripts, make sure you have the following 
 
 ## Usage
 
+### Google Sheets Structure
+
+The Google Sheets used in this project is structured with the following columns:
+
+- `fullname`: The full name of the grant applicant.
+- `email`: The email address of the grant applicant.
+- `status`: The status of the email communication with the applicant, which can have one of the following values:
+  - `SENT`: Indicates that the email was successfully sent to the applicant.
+  - `PENDING`: Indicates that the email has not yet been sent and is awaiting processing.
+  - `FAILED`: Indicates that the email sending process encountered an issue and was not successful.
+
+Here is an example of how the Google Sheets data may look:
+
+|   fullname   |          email         |  status  |
+|--------------|------------------------|----------|
+| Mia Gomez    | mia.gomez@gmail.com    | SENT     |
+| Sora Kim     | sora.kim@gmail.com     | PENDING  |
+| John Doe     | john.doe@example.com   | FAILED   |
+
+You should ensure that your Google Sheets follows this structure for the script to work correctly. The script will read data from the `fullname` and `email` columns and update the `status` column with one of these values based on the email sending process.
+
+
+
 ### Batch Email Sending (First Script)
 
 1. Run the first script using the following command:
