@@ -143,11 +143,11 @@ def email(email, fullname):
 
 def send_email():
     applicants = fetch_applicants_from_sheet()
-    value = 2
+    range_value = 2
 
     for applicant in applicants:
         response = email(fullname=applicant[0], email=applicant[1])
-        update_value(value=response, range_name=f"C{value}")
+        update_value(value=response, range_name=f"C{range_value}")
         range_value += 1
         if range_value % 50 == 0:
             time.sleep(60)
