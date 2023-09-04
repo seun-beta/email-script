@@ -1,10 +1,12 @@
 import json
+import time
 import os
 from dotenv import load_dotenv
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
+
 
 load_dotenv()  # take environment variables from .env
 
@@ -148,8 +150,6 @@ def send_email():
         update_value(value=response, range_name=f"C{value}")
         range_value += 1
         if range_value % 50 == 0:
-            import time
-
             time.sleep(60)
 
 
